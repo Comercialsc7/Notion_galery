@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #333;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+        .slides {
+            display: none;
+            width: 100%;
+            height: auto;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <img class="slides" src="Pagina de Login.png">
+        <img class="slides" src="Rectangle 15.png">
+        <img class="slides" src="Frame 1 (2).png">
+        <!-- Adicione mais imagens conforme necessário -->
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 5000); // Muda a cada 5 segundos
+        }
+    </script>
+</body>
+</html>
